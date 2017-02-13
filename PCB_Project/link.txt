@@ -1,0 +1,4 @@
+current measurement: http://www.digikey.com/products/en/sensors-transducers/current-transducers/525?FV=ffe0020d&mnonly=0&newproducts=0&ColumnSort=0&page=1&stock=0&pbfree=0&rohs=0&quantity=0&ptm=0&fid=0&pageSize=500&pkeyword=hall+current+sensor
+
+8 bites STM uC: http://www.st.com/content/st_com/en/products/microcontrollers/stm8-8-bit-mcus/stm8s-series.html?querycriteria=productId=SS1010
+
