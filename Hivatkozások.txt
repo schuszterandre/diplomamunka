@@ -1,0 +1,2 @@
+Dead time:https: //www.eal.ei.tum.de/fileadmin/tueieal/www/courses/PE/tutorial/2013-2014-W/07_PWM.pdf
+Inverter: http://minitorn.tlu.ee/~jaagup/kool/java/kursused/15/robootika/elektriopik.pdf
