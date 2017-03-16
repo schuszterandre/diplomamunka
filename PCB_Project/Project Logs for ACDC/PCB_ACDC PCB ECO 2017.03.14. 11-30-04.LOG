@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=UIN Pin=J1-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Change Component Comment : Designator=L1 Old Comment=160uH New Comment=80uH
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=UIN Pin=J1-2
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement

@@ -1,6 +1,6 @@
 [Design]
 Version=1.0
-HierarchyMode=4
+HierarchyMode=3
 ChannelRoomNamingStyle=0
 ReleasesFolder=
 ReleaseVaultGUID=
@@ -39,23 +39,6 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=BlockDiagram.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=0
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=XCHDPIOC
-
-[Document2]
 DocumentPath=Inverters, drives.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -72,41 +55,24 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OUGMWNDG
 
+[Document2]
+DocumentPath=..\..\STMicroelectronics STM32 F3\STMicroelectronics STM32 F3.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RDABWHXN
+
 [Document3]
-DocumentPath=..\..\STMicroelectronics STM32 F0.IntLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document4]
-DocumentPath=..\..\STMicroelectronics STM32 F0\STMicroelectronics STM32 F0.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=BNENLFHK
-
-[Document5]
 DocumentPath=Schlib1.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -123,8 +89,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LBIMHLYL
 
-[Document6]
-DocumentPath=..\..\STMicroelectronics STM32 F0\STMicroelectronics STM32 F0.PcbLib
+[Document4]
+DocumentPath=..\..\STMicroelectronics STM32 F3\STMicroelectronics STM32 F3.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -138,9 +104,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=KRXSGCVB
+DocumentUniqueId=LVBWQJBY
 
-[Document7]
+[Document5]
 DocumentPath=PcbLib1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -157,7 +123,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=IGFSJDGF
 
-[Document8]
+[Document6]
 DocumentPath=microcontroller.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -174,7 +140,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RQEGNFNE
 
-[Document9]
+[Document7]
 DocumentPath=Measurement.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -191,7 +157,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DOMHLEYB
 
-[Document10]
+[Document8]
 DocumentPath=ACDC.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -207,6 +173,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document9]
+DocumentPath=PCB_ACDC.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JDPPMRPU
 
 [ProjectVariant1]
 Description=Base
@@ -228,52 +211,52 @@ Path=..\..\PLIB100\*.*
 IncludeSubFolders=1
 
 [Parameter1]
-Name=ApprovedBy
-Value=
+Name=Title
+Value=Block Diagram
 
 [Parameter2]
-Name=Company
-Value=
-
-[Parameter3]
-Name=ModificationIndex
-Value=0
-
-[Parameter4]
-Name=PCBName
-Value=PCB177
-
-[Parameter5]
-Name=PCBRevision
-Value=A
-
-[Parameter6]
-Name=Project
-Value=Mini PCI Express Module
-
-[Parameter7]
-Name=ProjectCheckedBy
-Value=
-
-[Parameter8]
-Name=ProjectDate
-Value=10-02-17
-
-[Parameter9]
-Name=ProjectDrawnBy
-Value=Schuszter André
-
-[Parameter10]
-Name=ProjectName
-Value=DCAC converter
-
-[Parameter11]
 Name=ProjectOwner
 Value=Schuszter André
 
+[Parameter3]
+Name=ProjectName
+Value=DCAC converter
+
+[Parameter4]
+Name=ProjectDrawnBy
+Value=Schuszter André
+
+[Parameter5]
+Name=ProjectDate
+Value=10-02-17
+
+[Parameter6]
+Name=ProjectCheckedBy
+Value=
+
+[Parameter7]
+Name=Project
+Value=Mini PCI Express Module
+
+[Parameter8]
+Name=PCBRevision
+Value=A
+
+[Parameter9]
+Name=PCBName
+Value=PCB177
+
+[Parameter10]
+Name=ModificationIndex
+Value=0
+
+[Parameter11]
+Name=Company
+Value=
+
 [Parameter12]
-Name=Title
-Value=Block Diagram
+Name=ApprovedBy
+Value=
 
 [Configuration1]
 Name=Default Configuration
@@ -298,7 +281,7 @@ AddNetNetLabels=-1
 AddNetPorts=-1
 ShowComponentParameters=-1
 GlobalBookmarks=0
-ExportBOM=-1
+ExportBOM=0
 TemplateFilename=Board Stack Report.XLT
 TemplateStoreRelative=-1
 PCB_PrintColor=1

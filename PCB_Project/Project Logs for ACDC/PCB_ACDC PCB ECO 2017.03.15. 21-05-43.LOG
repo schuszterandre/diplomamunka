@@ -1,0 +1,25 @@
+Added Component: Designator=U11(LCD)
+Added Pin To Net: NetName=5V Pin=U11-1
+Added Pin To Net: NetName=GND Pin=U11-2
+Added Pin To Net: NetName=NetP1_2 Pin=U11-3
+Added Pin To Net: NetName=DB0 Pin=U11-4
+Added Pin To Net: NetName=DB1 Pin=U11-5
+Added Pin To Net: NetName=DB2 Pin=U11-6
+Added Pin To Net: NetName=DB3 Pin=U11-7
+Added Pin To Net: NetName=DB4 Pin=U11-8
+Added Pin To Net: NetName=DB5 Pin=U11-9
+Added Pin To Net: NetName=DB6 Pin=U11-10
+Added Pin To Net: NetName=DB7 Pin=U11-11
+Added Pin To Net: NetName=/CS1 Pin=U11-12
+Added Pin To Net: NetName=/CS2 Pin=U11-13
+Added Pin To Net: NetName=RST Pin=U11-14
+Added Pin To Net: NetName=GND Pin=U11-15
+Added Pin To Net: NetName=D/I Pin=U11-16
+Added Pin To Net: NetName=EN Pin=U11-17
+Added Pin To Net: NetName=NetP1_3 Pin=U11-18
+Added Pin To Net: NetName=5V Pin=U11-19
+Added Pin To Net: NetName=NetQ9_D Pin=U11-20
+Added Member To Class: ClassName=microcontroller Member=Component U11 64128QCCBW-3LP
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller
