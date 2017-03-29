@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=GND Pin=R53-2
+Removed Pin From Net: NetName=BOOST_CURR+ Pin=U10-4
+Removed Pin From Net: NetName=BOOST_CURR- Pin=U10-5
+Removed Pin From Net: NetName=VI_BOOST_OUT Pin=U14-1
+Removed Pin From Net: NetName=GND Pin=U14-2
+Removed Pin From Net: NetName=VI_BOOST_OUT Pin=U14-4
+Removed Pin From Net: NetName=3V3 Pin=U14-5
+Removed Member From Class: ClassName=Measurement Member=U14
+Change Component Comment : Designator=R70 Old Comment=0.01 New Comment=0.003
+Change Component Comment : Designator=R39 Old Comment=16k New Comment=470
+Change Component Comment : Designator=R53 Old Comment=20k New Comment=0
+Added Component: Designator=C45(CAPC2012X06N)
+Added Component: Designator=C46(CAPC2012X06N)
+Added Component: Designator=R55(RESC2012X06N)
+Added Pin To Net: NetName=GND Pin=C46-1
+Added Pin To Net: NetName=VI_BOOST_OUT Pin=C46-2
+Added Pin To Net: NetName=BOOST_CURR+ Pin=R39-2
+Added Pin To Net: NetName=VI_BOOST_OUT Pin=R53-1
+Added Pin To Net: NetName=BOOST_CURR- Pin=R55-2
+Added Pin To Net: NetName=NetC45_1 Pin=C45-1
+Added Pin To Net: NetName=NetC45_1 Pin=R55-1
+Added Pin To Net: NetName=NetC45_1 Pin=U10-5
+Added Net: Name=NetC45_1
+Added Pin To Net: NetName=NetC45_2 Pin=C45-2
+Added Pin To Net: NetName=NetC45_2 Pin=R39-1
+Added Pin To Net: NetName=NetC45_2 Pin=U10-4
+Added Net: Name=NetC45_2
+Added Pin To Net: NetName=NetR53_2 Pin=R53-2
+Added Pin To Net: NetName=NetR53_2 Pin=U10-6
+Added Net: Name=NetR53_2
+Added Member To Class: ClassName=Measurement Member=Component C45 1nF
+Added Member To Class: ClassName=Measurement Member=Component C46 DNP
+Added Member To Class: ClassName=Measurement Member=Component R55 470
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

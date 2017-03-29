@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=UIN_ANALOG Pin=U15-10
+Removed Pin From Net: NetName=UPRIMER_ANALOG Pin=U15-11
+Removed Pin From Net: NetName=UPHASE_ANALOG Pin=U15-12
+Removed Pin From Net: NetName=VIOUT Pin=U15-13
+Removed Pin From Net: NetName=POT2FREQUENCY Pin=U15-14
+Removed Pin From Net: NetName=POT2VOLTAGE Pin=U15-15
+Removed Pin From Net: NetName=UBOOSTER_ANALOG Pin=U15-25
+Removed Pin From Net: NetName=VI_BOOST_OUT Pin=U15-26
+Added Pin To Net: NetName=POT2FREQUENCY Pin=U15-10
+Added Pin To Net: NetName=POT2VOLTAGE Pin=U15-11
+Added Pin To Net: NetName=UIN_ANALOG Pin=U15-12
+Added Pin To Net: NetName=VI_BOOST_OUT Pin=U15-13
+Added Pin To Net: NetName=UBOOSTER_ANALOG Pin=U15-14
+Added Pin To Net: NetName=VIOUT Pin=U15-15
+Added Pin To Net: NetName=UPRIMER_ANALOG Pin=U15-25
+Added Pin To Net: NetName=UPHASE_ANALOG Pin=U15-26

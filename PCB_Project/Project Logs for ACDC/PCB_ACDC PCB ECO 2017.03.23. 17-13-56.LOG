@@ -1,0 +1,43 @@
+Removed Pin From Net: NetName=DB0 Pin=U15-18
+Removed Pin From Net: NetName=DB1 Pin=U15-19
+Removed Pin From Net: NetName=DB2 Pin=U15-20
+Removed Pin From Net: NetName=/CS1 Pin=U15-21
+Removed Pin From Net: NetName=/CS2 Pin=U15-22
+Removed Pin From Net: NetName=EN Pin=U15-25
+Removed Pin From Net: NetName=RST Pin=U15-26
+Removed Pin From Net: NetName=VI_BOOST_OUT Pin=U15-27
+Removed Pin From Net: NetName=UBOOSTER_ANALOG Pin=U15-28
+Removed Pin From Net: NetName=NetC41_1 Pin=U15-30
+Removed Pin From Net: NetName=PRE Pin=U15-31
+Removed Pin From Net: NetName=RELAY Pin=U15-32
+Removed Pin From Net: NetName=NetTP4_1 Pin=U15-33
+Removed Pin From Net: NetName=DB3 Pin=U15-39
+Removed Pin From Net: NetName=DB4 Pin=U15-40
+Removed Pin From Net: NetName=DB5 Pin=U15-41
+Removed Pin From Net: NetName=DB6 Pin=U15-42
+Removed Pin From Net: NetName=DB7 Pin=U15-43
+Removed Pin From Net: NetName=D/I Pin=U15-45
+Removed Pin From Net: NetName=PWM_LED Pin=U15-46
+Added Pin To Net: NetName=NetC41_1 Pin=U15-18
+Added Pin To Net: NetName=NetTP4_1 Pin=U15-20
+Added Pin To Net: NetName=RELAY Pin=U15-21
+Added Pin To Net: NetName=PRE Pin=U15-22
+Added Pin To Net: NetName=UBOOSTER_ANALOG Pin=U15-25
+Added Pin To Net: NetName=VI_BOOST_OUT Pin=U15-26
+Added Pin To Net: NetName=PWM_LED Pin=U15-27
+Added Pin To Net: NetName=EN Pin=U15-28
+Added Pin To Net: NetName=D/I Pin=U15-30
+Added Pin To Net: NetName=RST Pin=U15-31
+Added Pin To Net: NetName=/CS2 Pin=U15-32
+Added Pin To Net: NetName=/CS1 Pin=U15-33
+Added Pin To Net: NetName=DB7 Pin=U15-38
+Added Pin To Net: NetName=DB6 Pin=U15-39
+Added Pin To Net: NetName=DB5 Pin=U15-40
+Added Pin To Net: NetName=DB4 Pin=U15-41
+Added Pin To Net: NetName=DB3 Pin=U15-42
+Added Pin To Net: NetName=DB2 Pin=U15-43
+Added Pin To Net: NetName=DB1 Pin=U15-45
+Added Pin To Net: NetName=DB0 Pin=U15-46
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

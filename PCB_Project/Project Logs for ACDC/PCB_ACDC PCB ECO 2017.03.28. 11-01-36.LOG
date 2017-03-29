@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=/FLT1 Pin=U15-2
+Removed Pin From Net: NetName=/FLT2 Pin=U15-3
+Removed Pin From Net: NetName=/FLT3 Pin=U15-4
+Added Pin To Net: NetName=/FLT3 Pin=U15-2
+Added Pin To Net: NetName=/FLT1 Pin=U15-3
+Added Pin To Net: NetName=/FLT2 Pin=U15-4

@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetJ3_1 Pin=J7-1
+Removed Pin From Net: NetName=NetJ3_2 Pin=J7-2
+Added Pin To Net: NetName=NetJ3_2 Pin=J7-1
+Added Pin To Net: NetName=NetJ3_1 Pin=J7-2
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

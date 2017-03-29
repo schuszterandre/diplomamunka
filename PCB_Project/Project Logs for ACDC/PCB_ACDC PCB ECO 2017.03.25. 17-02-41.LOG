@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=U_PHASE+ Pin=J4-1
+Removed Pin From Net: NetName=U_PHASE- Pin=J4-2
+Added Pin To Net: NetName=U_PHASE- Pin=J4-1
+Added Pin To Net: NetName=U_PHASE+ Pin=J4-2
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

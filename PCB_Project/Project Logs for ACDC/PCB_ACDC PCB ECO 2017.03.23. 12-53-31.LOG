@@ -1,0 +1,11 @@
+Added Component: Designator=L2(IND_160uH)
+Added Component: Designator=L3(IND_160uH)
+Added Pin To Net: NetName=U_PRIMER+ Pin=L2-1
+Added Pin To Net: NetName=T_SOURCE_LEFT Pin=L2-2
+Added Pin To Net: NetName=U_PRIMER- Pin=L3-1
+Added Pin To Net: NetName=NetL3_2 Pin=L3-2
+Added Member To Class: ClassName=Inverters, drives Member=Component L2 100uH
+Added Member To Class: ClassName=Inverters, drives Member=Component L3 100uH
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller
