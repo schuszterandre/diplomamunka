@@ -1,0 +1,13 @@
+18:34:05 **** Incremental Build of configuration Debug for project ACDC ****
+make all 
+'Building file: ../Src/ADCValues.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -DSTM32F303CBT7 -DDEBUG -DSTM32 -I"C:\Users\Schuster André\Desktop\Diplomamunka\ACDC\Drivers\CMSIS\Device\ST\STM32F3xx\Include" -I"C:\Users\Schuster André\Desktop\Diplomamunka\ACDC\Drivers\STM32F3xx_HAL_Driver\Inc" -I"C:\Users\Schuster André\Desktop\Diplomamunka\ACDC\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy" -I"C:\Users\Schuster André\Desktop\Diplomamunka\ACDC\Drivers\CMSIS\Include" -std=gnu11 -MMD -MP -MF"Src/ADCValues.d" -MT"Src/ADCValues.o" -c -o "Src/ADCValues.o" "../Src/ADCValues.c"
+../Src/ADCValues.c:1:27: fatal error: stm32f3xx_hal.h: No such file or directory
+ #include "stm32f3xx_hal.h"
+                           ^
+compilation terminated.
+make: *** [Src/ADCValues.o] Error 1
+
+18:34:10 Build Finished (took 4s.564ms)
+

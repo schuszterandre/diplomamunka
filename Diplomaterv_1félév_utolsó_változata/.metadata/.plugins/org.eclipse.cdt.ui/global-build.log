@@ -1,0 +1,116 @@
+22:26:43 **** Incremental Build of configuration Debug for project Diplomaterv ****
+make -j4 all 
+'Building file: ../src/main.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DUSE_HAL_DRIVER -DSTM32F303xC -DHSE_VALUE=32000000 -I"D:\Diplomaterv\Diplomaterv\include" -I"D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include" -I"D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include" -I"D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+In file included from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cm4.h:188:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f303xc.h:168,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f3xx.h:153,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_def.h:48,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_rcc.h:47,
+                 from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:187,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmInstr.h: In function '__REVSH':
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmInstr.h:534:35: warning: conversion to 'short unsigned int' from 'int32_t' may alter its value [-Wconversion]
+   return (short)__builtin_bswap16(value);
+                                   ^
+In file included from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cm4.h:189:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f303xc.h:168,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f3xx.h:153,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_def.h:48,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_rcc.h:47,
+                 from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:187,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmFunc.h: In function '__set_FPSCR':
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmFunc.h:624:78: warning: unused parameter 'fpscr' [-Wunused-parameter]
+ __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_FPSCR(uint32_t fpscr)
+                                                                              ^
+In file included from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cm4.h:190:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f303xc.h:168,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Device\ST\STM32F3xx\Include/stm32f3xx.h:153,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_def.h:48,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_rcc.h:47,
+                 from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:187,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmSimd.h: In function '__SMMLA':
+D:\Diplomaterv\Diplomaterv\Drivers\CMSIS\Include/core_cmSimd.h:665:2: warning: conversion to 'uint32_t' from 'int32_t' may change the sign of the result [-Wsign-conversion]
+  return(result);
+  ^
+In file included from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:195:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_dma.h: At top level:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_dma.h:138:26: warning: padding struct to align 'Parent' [-Wpadded]
+   void                  *Parent;                                                      /*!< Parent object state                    */  
+                          ^
+In file included from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:199:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_cortex.h:72:26: warning: padding struct to align 'BaseAddress' [-Wpadded]
+   uint32_t               BaseAddress;           /*!< Specifies the base address of the region to protect.                           */
+                          ^
+In file included from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:203:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_adc.h:119:33: warning: padding struct to align 'State' [-Wpadded]
+   __IO uint32_t                 State;                  /*!< ADC communication state (bitmap of ADC states) */
+                                 ^
+In file included from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:227:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash.h:107:31: warning: padding struct to align 'DataRemaining' [-Wpadded]
+   __IO uint32_t               DataRemaining;    /*!< Internal variable to save the remaining pages to erase or half-word to program in IT context */
+                               ^
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash.h:111:31: warning: padding struct to align 'Data' [-Wpadded]
+   __IO uint64_t               Data;             /*!< Internal variable to save data to be programmed */
+                               ^
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash.h:115:31: warning: padding struct to align 'ErrorCode' [-Wpadded]
+   __IO uint32_t               ErrorCode;        /*!< FLASH error code                    
+                               ^
+In file included from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash.h:323:0,
+                 from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:227,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash_ex.h:198:12: warning: padding struct to align 'DATAAddress' [-Wpadded]
+   uint32_t DATAAddress; /*!< DATAAddress: Address of the option byte DATA to be programmed
+            ^
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_flash_ex.h:203:1: warning: padding struct size to alignment boundary [-Wpadded]
+ } FLASH_OBProgramInitTypeDef;
+ ^
+In file included from D:\Diplomaterv\Diplomaterv\include/stm32f3xx_hal_conf.h:299:0,
+                 from D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal.h:48,
+                 from ../src/main.c:4:
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_tim.h:291:29: warning: padding struct to align 'hdma' [-Wpadded]
+   DMA_HandleTypeDef        *hdma[7];      /*!< DMA Handlers array
+                             ^
+D:\Diplomaterv\Diplomaterv\Drivers\STM32F3xx_HAL_Driver\Inc/stm32f3xx_hal_tim.h:295:1: warning: padding struct size to alignment boundary [-Wpadded]
+ }TIM_HandleTypeDef;
+ ^
+In file included from ../src/main.c:8:0:
+D:\Diplomaterv\Diplomaterv\include/LCD.h:8:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void LCD_On();
+ ^
+../src/main.c: In function 'main':
+../src/main.c:35:8: warning: unused variable 'str' [-Wunused-variable]
+   char str[60];
+        ^
+'Finished building: ../src/main.c'
+' '
+'Building target: Diplomaterv.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto -fno-move-loop-invariants -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "D:\Diplomaterv\Diplomaterv\ldscripts\STM32F303CBTx_FLASH.ld" -Xlinker --gc-sections -Wl,-Map,"Diplomaterv.map" --specs=nano.specs -o "Diplomaterv.elf"  ./src/LCD.o ./src/adc.o ./src/gpio.o ./src/main.o ./src/stm32f3xx_hal_msp.o ./src/stm32f3xx_it.o ./src/tim.o  ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cec.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_comp.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_hrtim.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_irda.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_iwdg.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nand.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nor.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pccard.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sdadc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smbus.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sram.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_usart.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_wwdg.o ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_fmc.o  ./Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc/startup_stm32f303xc.o  ./Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.o   
+'Finished building target: Diplomaterv.elf'
+' '
+'Invoking: Cross ARM GNU Create Flash Image'
+arm-none-eabi-objcopy -O ihex "Diplomaterv.elf"  "Diplomaterv.hex"
+'Invoking: Cross ARM GNU Print Size'
+arm-none-eabi-size --format=berkeley "Diplomaterv.elf"
+   text	   data	    bss	    dec	    hex	filename
+  19628	    120	   2096	  21844	   5554	Diplomaterv.elf
+'Finished building: Diplomaterv.siz'
+'Finished building: Diplomaterv.hex'
+' '
+' '

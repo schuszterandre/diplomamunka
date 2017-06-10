@@ -1,0 +1,23 @@
+Change Component Description : Designator=R20 Old Description=80-01-97 New Description= 81-02-25
+Change Component Description : Designator=R38 Old Description=80-01-97 New Description= 81-02-25
+Change Component Description : Designator=R18 Old Description=80-05-14 New Description= 80-11-30
+Change Component Description : Designator=R19 Old Description=80-05-14 New Description= 80-11-30
+Change Component Description : Designator=R23 Old Description=80-05-14 New Description= 80-11-30
+Change Component Description : Designator=R24 Old Description=80-05-14 New Description= 80-11-30
+Added Component: Designator=J5(TOGGLE)
+Added Component: Designator=P2(potmeter)
+Added Component: Designator=P3(potmeter)
+Added Pin To Net: NetName=NetC41_1 Pin=J5-2
+Added Pin To Net: NetName=GND Pin=J5-3
+Added Pin To Net: NetName=GND Pin=P2-1
+Added Pin To Net: NetName=POT2VOLTAGE Pin=P2-2
+Added Pin To Net: NetName=3V3 Pin=P2-3
+Added Pin To Net: NetName=GND Pin=P3-1
+Added Pin To Net: NetName=POT2FREQUENCY Pin=P3-2
+Added Pin To Net: NetName=3V3 Pin=P3-3
+Added Member To Class: ClassName=microcontroller Member=Component J5 mts-102-a2
+Added Member To Class: ClassName=microcontroller Member=Component P2 XP-148M-A1M0
+Added Member To Class: ClassName=microcontroller Member=Component P3 XP-148M-A1M0
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

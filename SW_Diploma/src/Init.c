@@ -1,0 +1,455 @@
+#include "Init.h"
+#include "stm32f3xx.h"
+#include "stm32f30x.h"
+#include "stm32f3xx_hal.h"
+#include "stm32f3xx_hal_tim.h"
+#include "stm32f3xx_hal_rcc.h"
+#include "stm32f3xx_hal_adc.h"
+#include "stm32f3xx_hal_gpio.h"
+#include "stm32f30x_gpio.h"
+#include "stm32f30x_adc.h"
+#include "stm32f30x_rcc.h"
+//#define HSE_VALUE    ((uint32_t)32000000)
+
+TIM_HandleTypeDef Tim1Handle;
+TIM_HandleTypeDef Tim3Handle;
+TIM_HandleTypeDef Tim16Handle;
+TIM_OCInitTypeDef  TIM_OCInitStructure;
+
+ADC_HandleTypeDef ADC1Handle;
+ADC_HandleTypeDef ADC2Handle;
+ADC_HandleTypeDef ADC3Handle;
+ADC_HandleTypeDef ADC4Handle;
+
+void IO_Init(){
+
+	/* GPIO Ports Clock Enable */
+	__GPIOC_CLK_ENABLE();
+	__GPIOF_CLK_ENABLE();
+	__GPIOA_CLK_ENABLE();
+	__GPIOB_CLK_ENABLE();
+
+  GPIO_InitTypeDef GPIO_InitStructure;
+
+  /*Configure GPIO pins : PC13 PC14 PC15 */
+  GPIO_InitStructure.Pin = GPIO_PIN_13 | GPIO_PIN_14  | GPIO_PIN_15;
+  GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+  /*Configure GPIO pins : PA5 PA9 PA10 PA11 PA12 PA15 */
+  GPIO_InitStructure.Pin = GPIO_PIN_5 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_15;
+  GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+  /*Configure GPIO pins : PB1 PB15 PB3 PB4 PB5 PB6 PB7 PB8 PB9 */
+  GPIO_InitStructure.Pin = GPIO_PIN_1 | GPIO_PIN_15 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9;
+  GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+  /*Configure GPIO pin : PB14 */
+  GPIO_InitStructure.Pin = GPIO_PIN_14;
+  GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+/********************************************************ADC Pin onfiguration*******************************************************/
+
+  /**ADC1 GPIO Configuration
+    PA0     ------> ADC1_IN1
+    PA1     ------> ADC1_IN2
+    PA2     ------> ADC1_IN3
+    PA3     ------> ADC1_IN4
+
+    */
+
+  GPIO_InitStructure.Pin = GPIO_PIN_14 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;
+  GPIO_InitStructure.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    /**ADC2 GPIO Configuration  PA4 ---> ADC2_IN1 PB2  ---> ADC2_IN12 */
+  GPIO_InitStructure.Pin = GPIO_PIN_4;
+  //GPIO_InitStructure.Mode = GPIO_MODE_ANALOG;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+
+  GPIO_InitStructure.Pin = GPIO_PIN_2;
+  //GPIO_InitStructure.Mode = GPIO_MODE_ANALOG   ;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+
+
+
+
+  /**ADC3 GPIO Configuration  PB13 ---> ADC3_IN5  */
+  GPIO_InitStructure.Pin = GPIO_PIN_13;
+ // GPIO_InitStructure.Mode = GPIO_MODE_ANALOG   ;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+ // GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+  /**ADC4 GPIO Configuration  PB12 ---> ADC4_IN3  */
+
+  GPIO_InitStructure.Pin = GPIO_PIN_12;
+  //GPIO_InitStructure.Mode = GPIO_MODE_ANALOG   ;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW; //2MHz
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+
+  /********************************************************Timer Pin onfiguration*******************************************************/
+  /**TIM1 GPIO Configuration   PA8 ---> TIM1_CH1*/
+  GPIO_InitStructure.Pin = GPIO_PIN_8;
+  GPIO_InitStructure.Mode =GPIO_MODE_AF_PP;
+  GPIO_InitStructure.Alternate=GPIO_AF_11;
+  GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+  /**TIM3 GPIO Configuration  PA7 ---> TIM3_CH2 PB0 ---> TIM3_CH3 */
+  GPIO_InitStructure.Pin = GPIO_PIN_7;
+  //GPIO_InitStructure.Mode =GPIO_MODE_AF_PP;
+  GPIO_InitStructure.Alternate=GPIO_AF_2;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+  GPIO_InitStructure.Pin = GPIO_PIN_0;
+ // GPIO_InitStructure.Mode =GPIO_MODE_AF_PP;
+  GPIO_InitStructure.Alternate=GPIO_AF_2;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+ // GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+  /**TIM16 GPIO Configuration  PA6 ---> TIM16_CH1 */
+  GPIO_InitStructure.Pin = GPIO_PIN_6;
+  //GPIO_InitStructure.Mode =GPIO_MODE_AF_PP;
+  GPIO_InitStructure.Alternate=GPIO_AF_4;
+  //GPIO_InitStructure.Speed = GPIO_SPEED_LOW;
+  //GPIO_InitStructure.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+}
+
+
+
+
+void Timer_Init(){
+	/* TIM1_CH1 init function-Booster PWM 25kHz PWM a 72MHz órajelbõl*/
+	__TIM1_CLK_ENABLE();
+
+
+	Tim1Handle.Instance = TIM1;
+	Tim1Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	Tim1Handle.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1 ;
+	Tim1Handle.Init.Prescaler = 0;
+	Tim1Handle.Init.Period = 2880;
+	Tim1Handle.State = HAL_TIM_STATE_RESET;
+
+	HAL_TIM_Base_Init(&Tim1Handle);
+	HAL_TIM_PWM_Init(&Tim1Handle);
+
+	TIM_OCInitStructure.TIM_OCMode=TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_Pulse=0;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPOLARITY_HIGH;
+	TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPOLARITY_LOW;
+	TIM_OCInitStructure.TIM_OutputState=TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_OutputNState=TIM_OutputNState_Disable;
+	TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIDLESTATE_RESET;
+	TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIDLESTATE_SET;
+
+	HAL_NVIC_SetPriority(TIM1_UP_TIM16_IRQn, 3, 1);
+	HAL_NVIC_EnableIRQ(TIM1_UP_TIM16_IRQn);
+	HAL_TIM_PWM_ConfigChannel(&Tim1Handle, &TIM_OCInitStructure, HAL_TIM_ACTIVE_CHANNEL_1);
+	HAL_TIM_PWM_Start(&Tim1Handle, HAL_TIM_ACTIVE_CHANNEL_1);
+	HAL_TIM_Base_Start_IT(&Tim1Handle);
+
+
+	/* TIM3_CH2 & TIM3_CH3 init function-PWM for left&right half bridge  */
+
+
+	__TIM3_CLK_ENABLE();
+
+	Tim3Handle.Instance = TIM3;
+	Tim3Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	Tim3Handle.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1 ;
+	Tim3Handle.Init.Prescaler = 0;
+	Tim3Handle.Init.Period = 2880;
+	Tim3Handle.State = HAL_TIM_STATE_RESET;
+
+	HAL_TIM_Base_Init(&Tim3Handle);
+	HAL_TIM_PWM_Init(&Tim3Handle);
+
+	TIM_OCInitStructure.TIM_OCMode=TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_Pulse=0;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPOLARITY_HIGH;
+	TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPOLARITY_LOW;
+	TIM_OCInitStructure.TIM_OutputState=TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_OutputNState=TIM_OutputNState_Disable;
+	TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIDLESTATE_RESET;
+	TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIDLESTATE_SET;
+
+	HAL_NVIC_SetPriority(TIM3_IRQn, 3, 2);
+	HAL_NVIC_EnableIRQ(TIM3_IRQn);
+
+	HAL_TIM_PWM_ConfigChannel(&Tim3Handle, &TIM_OCInitStructure, HAL_TIM_ACTIVE_CHANNEL_2);
+	HAL_TIM_PWM_Start(&Tim3Handle, HAL_TIM_ACTIVE_CHANNEL_2);
+
+
+	/*TIM3_CH3 invertált kimenet*/
+
+	TIM_OCInitStructure.TIM_OCMode=TIM_OCMode_PWM2;
+	TIM_OCInitStructure.TIM_Pulse=0;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPOLARITY_HIGH;  //invertált kimenetnél elég a PWM2 mód, vagy az OCPolarityt is LOW-ba kell rakni
+	TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPOLARITY_LOW;
+	TIM_OCInitStructure.TIM_OutputState=TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_OutputNState=TIM_OutputNState_Disable;
+	TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIDLESTATE_RESET;
+	TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIDLESTATE_SET;
+
+	HAL_TIM_PWM_ConfigChannel(&Tim3Handle, &TIM_OCInitStructure, HAL_TIM_ACTIVE_CHANNEL_3);
+	HAL_TIM_PWM_Start(&Tim3Handle, HAL_TIM_ACTIVE_CHANNEL_3);
+	HAL_TIM_Base_Start_IT(&Tim3Handle);
+
+
+	/* TIM16_CH1 init function-LED PWM */
+
+	Tim16Handle.Instance = TIM16;
+	Tim16Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	Tim16Handle.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1 ;
+	Tim16Handle.Init.Prescaler = 0;
+	Tim16Handle.Init.Period = 1500;
+	Tim16Handle.State = HAL_TIM_STATE_RESET;
+
+	HAL_TIM_Base_Init(&Tim16Handle);
+	HAL_TIM_PWM_Init(&Tim16Handle);
+
+	TIM_OCInitStructure.TIM_OCMode=TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_Pulse=750;
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPOLARITY_HIGH;
+	TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPOLARITY_LOW;
+	TIM_OCInitStructure.TIM_OutputState=TIM_OutputState_Enable;
+	TIM_OCInitStructure.TIM_OutputNState=TIM_OutputNState_Disable;
+	TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIDLESTATE_RESET;
+	TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIDLESTATE_SET;
+
+	HAL_TIM_PWM_ConfigChannel(&Tim16Handle, &TIM_OCInitStructure, HAL_TIM_ACTIVE_CHANNEL_1);
+	HAL_TIM_PWM_Start(&Tim16Handle, HAL_TIM_ACTIVE_CHANNEL_1);
+	HAL_TIM_Base_Start_IT(&Tim16Handle);
+
+}
+
+
+
+void ADC_Init(){
+	__ADC1_CLK_ENABLE();
+	__ADC2_CLK_ENABLE();
+	__ADC3_CLK_ENABLE();
+	__ADC4_CLK_ENABLE();
+
+
+	 /********************************************* ADC1 Init ******************************************************/
+	ADC1Handle.Instance=ADC1;
+	ADC1Handle.Init.ADC_AutoInjMode=ADC_AutoInjec_Disable;
+	ADC1Handle.Init.ADC_ContinuousConvMode=ADC_ContinuousConvMode_Disable;
+	ADC1Handle.Init.ADC_DataAlign=ADC_DataAlign_Right;
+	//ADC1Handle.Init.ADC_ExternalTrigConvEvent=;
+	ADC1Handle.Init.ADC_ExternalTrigEventEdge=ADC_ExternalTrigEventEdge_None;
+	ADC1Handle.Init.ADC_NbrOfRegChannel=4;
+	ADC1Handle.Init.ADC_OverrunMode=ADC_OverrunMode_Disable;
+	ADC1Handle.Init.ADC_Resolution=ADC_Resolution_12b;
+	//ADC3Handle.State=HAL_ADC_STATE_RESET;
+	HAL_ADC_Init(&ADC1Handle);
+
+	 ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 1, ADC_SampleTime_61Cycles5);
+	 ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 2, ADC_SampleTime_61Cycles5);
+	 ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 3, ADC_SampleTime_61Cycles5);
+	 ADC_RegularChannelConfig(ADC1, ADC_Channel_4, 1, ADC_SampleTime_61Cycles5);
+
+
+
+
+	 //Enable ADC1,2 IRQ Channel */
+	 HAL_NVIC_SetPriority(ADC1_2_IRQn, 1, 1);
+	 HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
+	 HAL_ADC_Start_IT(&ADC1Handle);
+
+
+
+	 /********************************************* ADC2 Init ******************************************************/
+	 ADC2Handle.Instance=ADC2;
+	 ADC2Handle.Init.ADC_AutoInjMode=ADC_AutoInjec_Disable;
+	 ADC2Handle.Init.ADC_ContinuousConvMode=ADC_ContinuousConvMode_Enable;
+	 ADC2Handle.Init.ADC_DataAlign=ADC_DataAlign_Right;
+	 //ADC2Handle.Init.ADC_ExternalTrigConvEvent=;
+	 ADC2Handle.Init.ADC_ExternalTrigEventEdge=ADC_ExternalTrigEventEdge_None;
+	 ADC2Handle.Init.ADC_NbrOfRegChannel=2;
+	 ADC2Handle.Init.ADC_OverrunMode=ADC_OverrunMode_Disable;
+	 ADC2Handle.Init.ADC_Resolution=ADC_Resolution_12b;
+	 //ADC3Handle.State=HAL_ADC_STATE_RESET;
+
+	 HAL_ADC_Init(&ADC2Handle);
+
+	 ADC_RegularChannelConfig(ADC2, ADC_Channel_1, 1, ADC_SampleTime_61Cycles5);
+	 ADC_RegularChannelConfig(ADC2, ADC_Channel_12, 1, ADC_SampleTime_61Cycles5);
+
+	 //Enable ADC2
+	 //ADC_Cmd(ADC2, ENABLE);
+	 //enable DMA for ADC
+	 // ADC_DMACmd(ADC2, ENABLE);
+	 //Enable ADC2 reset calibration register
+	 //ADC_ResetCalibration(ADC2);
+	 //Check the end of ADC2 reset calibration register
+	 //while(ADC_GetResetCalibrationStatus(ADC2));
+	 //Start ADC2 calibration
+	 //ADC_StartCalibration(ADC2);
+	 //Check the end of ADC2 calibration
+	 //while(ADC_GetCalibrationStatus(ADC2));
+
+	 HAL_ADC_Start_IT(&ADC2Handle);
+
+
+	 /********************************************* ADC3 Init ******************************************************/
+	 ADC3Handle.Instance=ADC2;
+	 ADC3Handle.Init.ADC_AutoInjMode=ADC_AutoInjec_Disable;
+	 ADC3Handle.Init.ADC_ContinuousConvMode=ADC_ContinuousConvMode_Enable;
+	 ADC3Handle.Init.ADC_DataAlign=ADC_DataAlign_Right;
+	 //ADC3Handle.Init.ADC_ExternalTrigConvEvent=;
+	 ADC3Handle.Init.ADC_ExternalTrigEventEdge=ADC_ExternalTrigEventEdge_None;
+	 ADC3Handle.Init.ADC_NbrOfRegChannel=2;
+	 ADC3Handle.Init.ADC_OverrunMode=ADC_OverrunMode_Disable;
+	 ADC3Handle.Init.ADC_Resolution=ADC_Resolution_12b;
+	 //ADC3Handle.State=HAL_ADC_STATE_RESET;
+
+	 HAL_ADC_Init(&ADC3Handle);
+
+	 ADC_RegularChannelConfig(ADC3, ADC_Channel_5, 1, ADC_SampleTime_61Cycles5);
+
+	 //Enable ADC3
+	 //	 ADC_Cmd(ADC3, ENABLE);
+	 //enable DMA for ADC
+	 // ADC_DMACmd(ADC3, ENABLE);
+	 //Enable ADC3 reset calibration register
+	 //ADC_ResetCalibration(ADC3);
+	 //Check the end of ADC3 reset calibration register
+	 //while(ADC_GetResetCalibrationStatus(ADC3));
+	 //Start ADC3 calibration
+	 //ADC_StartCalibration(ADC3);
+	 //Check the end of ADC3 calibration
+	 //while(ADC_GetCalibrationStatus(ADC3));
+
+	 //Enable ADC3 IRQ Channel */
+	 HAL_NVIC_SetPriority(ADC3_IRQn, 1, 3);
+	 HAL_NVIC_EnableIRQ(ADC3_IRQn);
+	 HAL_ADC_Start_IT(&ADC3Handle);
+
+
+
+
+	 /********************************************* ADC4 Init ******************************************************/
+	 ADC4Handle.Instance=ADC2;
+	 ADC4Handle.Init.ADC_AutoInjMode=ADC_AutoInjec_Disable;
+	 ADC4Handle.Init.ADC_ContinuousConvMode=ADC_ContinuousConvMode_Disable;
+	 ADC4Handle.Init.ADC_DataAlign=ADC_DataAlign_Right;
+	 //ADC4Handle.Init.ADC_ExternalTrigConvEvent=;
+	 ADC4Handle.Init.ADC_ExternalTrigEventEdge=ADC_ExternalTrigEventEdge_None;
+	 ADC3Handle.Init.ADC_NbrOfRegChannel=2;
+	 ADC3Handle.Init.ADC_OverrunMode=ADC_OverrunMode_Disable;
+	 ADC3Handle.Init.ADC_Resolution=ADC_Resolution_12b;
+	 //ADC3Handle.State=HAL_ADC_STATE_RESET;
+
+	 HAL_ADC_Init(&ADC4Handle);
+
+	 ADC_RegularChannelConfig(ADC4, ADC_Channel_5, 1, ADC_SampleTime_61Cycles5);
+
+	 //Enable ADC4
+	 //	 ADC_Cmd(ADC4, ENABLE);
+	 //enable DMA for ADC
+	 // ADC_DMACmd(ADC4, ENABLE);
+	 //Enable ADC4 reset calibration register
+	 //ADC_ResetCalibration(ADC4);
+	 //Check the end of ADC1 reset calibration register
+	 //while(ADC_GetResetCalibrationStatus(ADC4));
+	 //Start ADC4 calibration
+	 //ADC_StartCalibration(ADC4);
+	 //Check the end of ADC4 calibration
+	 //while(ADC_GetCalibrationStatus(ADC4));
+
+	 //Enable ADC4 IRQ Channel */
+	 HAL_NVIC_SetPriority(ADC4_IRQn, 1, 4);
+	 HAL_NVIC_EnableIRQ(ADC4_IRQn);
+	 HAL_ADC_Start_IT(&ADC4Handle);
+
+}
+
+
+
+void InitSysClockTo72(void)
+{
+	  RCC_ClkInitTypeDef RCC_ClkInitStruct;
+	  RCC_OscInitTypeDef RCC_OscInitStruct;
+
+	  // Enable Power Control clock
+	  __PWR_CLK_ENABLE();
+
+	  // The voltage scaling allows optimizing the power consumption when the
+	  // device is clocked below the maximum system frequency, to update the
+	  // voltage scaling value regarding system frequency refer to product
+	  // datasheet.
+	  //__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+	  // Enable HSE Oscillator and activate PLL with HSE as source
+	  RCC_PREDIV1Config(RCC_PREDIV1_Div4);
+
+
+	  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+	  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+	  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+	  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSource_PREDIV1;
+	  RCC_OscInitStruct.PLL.PLLMUL=RCC_PLLMul_9;
+	  HAL_RCC_OscConfig(&RCC_OscInitStruct);
+
+
+	  // Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2
+	  // clocks dividers
+	  RCC_ClkInitStruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK
+	      | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
+	  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+	  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+	  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+	  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+	  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_Latency_2);
+
+
+
+	  //HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+	  //HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+	  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+	  //RCC_ADCCLKConfig();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

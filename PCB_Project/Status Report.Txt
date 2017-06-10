@@ -1,6 +1,6 @@
 Project Outputs Generation Report
 ---------------------------------
-Start Output Generation At 10:05:01 On 2017.03.25.
+Start Output Generation At 20:34:35 On 2017.04.18.
 
 Output: Bill of Materials
 Type  : BOM
@@ -11,4 +11,4 @@ From  : Project [ACDC.PrjPcb]
 Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 10:05:24 On 2017.03.25.
+Finished Output Generation At 20:35:38 On 2017.04.18.

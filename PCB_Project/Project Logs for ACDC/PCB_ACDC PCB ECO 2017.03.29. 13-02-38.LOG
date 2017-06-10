@@ -1,0 +1,13 @@
+Change Component Description : Designator=R1 Old Description= New Description=42-02-61
+Change Component Description : Designator=D1 Old Description= New Description=83-02-64
+Change Component Description : Designator=Q4 Old Description= New Description=86-00-97
+Change Component Description : Designator=NTC1 Old Description= New Description=1688795
+Change Component Description : Designator=C5 Old Description= New Description=2326365
+Change Component Description : Designator=C6 Old Description= New Description=2326365
+Change Component Description : Designator=J1 Old Description=RM5.08 CLL5.08/2 New Description=43-07-92
+Added Component: Designator=R5(RESC2012X06N)
+Added Component: Designator=R58(RESC6432X07N)
+Added Pin To Net: NetName=BOOST_CURR+ Pin=R58-1
+Added Pin To Net: NetName=BOOST_CURR- Pin=R58-2
+Added Member To Class: ClassName=Inverters, drives Member=Component R5 50
+Added Member To Class: ClassName=Inverters, drives Member=Component R58 0.003

@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=PWM_BOOST Pin=U15-16
+Removed Pin From Net: NetName=PWM_LED Pin=U15-29
+Added Pin To Net: NetName=PWM_LED Pin=U15-16
+Added Pin To Net: NetName=PWM_BOOST Pin=U15-29
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller

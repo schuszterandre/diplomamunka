@@ -1,0 +1,7 @@
+23:04:24 **** Incremental Build of configuration Debug for project Diploma ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F30X -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=32000000 -I../include -I../system/include -I../system/include/cmsis -I../system/include/stm32f3-stdperiph "-IC:\\Users\\Roland\\workspace4\\Diploma\\Diploma\\Drivers\\CMSIS\\Device\\ST\\STM32F3xx\\Include" "-IC:\\Users\\Roland\\workspace4\\Diploma\\Diploma\\Drivers\\STM32F3xx_HAL_Driver\\Inc\\Legacy" -std=gnu11 -c -o "src\\Init.o" "..\\src\\Init.c" 
+..\src\Init.c:2:23: fatal error: stm32f3xx.h: No such file or directory
+ #include "stm32f3xx.h"
+                       ^
+compilation terminated.

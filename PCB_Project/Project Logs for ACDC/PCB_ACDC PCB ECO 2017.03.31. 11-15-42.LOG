@@ -1,0 +1,15 @@
+Added Component: Designator=U7(BUCK_CONVERTER)
+Added Pin To Net: NetName=GND Pin=U7-1
+Added Pin To Net: NetName=GND Pin=U7-2
+Added Pin To Net: NetName=GND Pin=U7-2
+Added Pin To Net: NetName=GND Pin=U7-2
+Added Pin To Net: NetName=NetC24_1 Pin=U7-3
+Added Pin To Net: NetName=5V Pin=U7-4
+Added Pin To Net: NetName=NetC27_1 Pin=U7-5
+Added Pin To Net: NetName=NetC27_2 Pin=U7-6
+Added Pin To Net: NetName=UIN Pin=U7-7
+Added Pin To Net: NetName=UIN Pin=U7-8
+Added Member To Class: ClassName=Measurement Member=Component U7 IFX91041EJV50XUMA1
+Added Room: Name=Inverters, drives
+Added Room: Name=Measurement
+Added Room: Name=microcontroller
