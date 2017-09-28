@@ -1,0 +1,283 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+htim8               0x3c              ./src/tim.o (symbol from plugin)
+pFlash              0x20              ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o (symbol from plugin)
+hadc1               0x54              ./src/adc.o (symbol from plugin)
+htim1               0x3c              ./src/tim.o (symbol from plugin)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ./src/adc.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .data          0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .bss           0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .bss.uwTick    0x00000000        0x4 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .debug_info    0x00000000       0x46 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .debug_abbrev  0x00000000       0x3e C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .debug_aranges
+                0x00000000       0x18 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .debug_line    0x00000000       0xc1 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .debug_str     0x00000000      0x12e C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .comment       0x00000000       0x71 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .ARM.attributes
+                0x00000000       0x31 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+ .text          0x00000000        0x0 ./src/gpio.o (symbol from plugin)
+ .text          0x00000000        0x0 ./src/main.o (symbol from plugin)
+ .text          0x00000000        0x0 ./src/stm32f3xx_hal_msp.o (symbol from plugin)
+ .text          0x00000000        0x0 ./src/stm32f3xx_it.o (symbol from plugin)
+ .text          0x00000000        0x0 ./src/tim.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cec.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_comp.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_hrtim.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_irda.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_iwdg.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nand.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nor.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pccard.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sdadc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smbus.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sram.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_usart.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_wwdg.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_fmc.o (symbol from plugin)
+ .text          0x00000000        0x0 ./Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.o (symbol from plugin)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00020000         xr
+RAM              0x20000000         0x00008000         xrw
+CCMRAM           0x10000000         0x00002000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./src/adc.o
+LOAD C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc_nano.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc_nano.a
+LOAD ./src/gpio.o
+LOAD ./src/main.o
+LOAD ./src/stm32f3xx_hal_msp.o
+LOAD ./src/stm32f3xx_it.o
+LOAD ./src/tim.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cec.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_comp.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_hrtim.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_irda.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_iwdg.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nand.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nor.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pccard.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sdadc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smbus.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sram.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_usart.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_wwdg.o
+LOAD ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_fmc.o
+LOAD ./Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.o
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libstdc++_nano.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc_nano.a
+END GROUP
+                0x20008000                _estack = 0x20008000
+                0x00000400                _Min_Heap_Size = 0x400
+                0x00000200                _Min_Stack_Size = 0x200
+
+.isr_vector     0x08000000        0x0
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+                0x08000000                . = ALIGN (0x4)
+
+.text           0x08000000        0x0
+                0x08000000                . = ALIGN (0x4)
+ *(.text)
+ *(.text*)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x08000000                . = ALIGN (0x4)
+                0x08000000                _etext = .
+
+.vfp11_veneer   0x08000000        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x08000000        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x08000000        0x0
+ .iplt          0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+
+.rel.dyn        0x08000000        0x0
+ .rel.iplt      0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+
+.rodata         0x08000000        0x0
+                0x08000000                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x08000000                . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x08000000        0x0
+                0x08000000                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08000000                __exidx_end = .
+
+.preinit_array  0x08000000        0x0
+                0x08000000                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x08000000                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x08000000        0x0
+                0x08000000                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+                0x08000000                PROVIDE (__init_array_end, .)
+
+.fini_array     0x08000000        0x0
+                0x08000000                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+                0x08000000                PROVIDE (__fini_array_end, .)
+                0x08000000                _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x08000000
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _edata = .
+                0x08000000                _siccmram = LOADADDR (.ccmram)
+
+.igot.plt       0x20000000        0x0 load address 0x08000000
+ .igot.plt      0x00000000        0x0 C:\Users\SCHUST~1\AppData\Local\Temp\cctOJ45D.ltrans0.ltrans.o
+
+.ccmram         0x10000000        0x0 load address 0x08000000
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _sccmram = .
+ *(.ccmram)
+ *(.ccmram*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _eccmram = .
+                0x10000000                . = ALIGN (0x4)
+
+.bss            0x20000000        0x0
+                0x20000000                _sbss = .
+                0x20000000                __bss_start__ = _sbss
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _ebss = .
+                0x20000000                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600
+                0x20000000                . = ALIGN (0x8)
+                0x20000000                PROVIDE (end, .)
+                0x20000000                PROVIDE (_end, .)
+                0x20000400                . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x400 
+                0x20000600                . = (. + _Min_Stack_Size)
+ *fill*         0x20000400      0x200 
+                0x20000600                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+ *(.ARM.attributes)
+OUTPUT(Diplomaterv.elf elf32-littlearm)

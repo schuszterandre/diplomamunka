@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Diplomaterv/Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc/startup_stm32f303xc.s&apos; to &apos;startup_stm32f303xc.S&apos;" description="Rename resource &apos;startup_stm32f303xc.s&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/gcc/startup_stm32f303xc.s" name="startup_stm32f303xc.S" stamp="1495114963343" updateReferences="true"/>
+</session>

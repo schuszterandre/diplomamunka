@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+gdb.client.commands=set mem inaccessible-by-default off
+gdb.client.executable=C\:\\Program Files (x86)\\GNU Tools ARM Embedded\\4.9 2015q1\\bin\\arm-none-eabi-gdb.exe
+gdb.client.other=
+gdb.openocd.doDebugInRam=false
+gdb.openocd.doInitialReset=true
+gdb.openocd.doPreRunReset=true
+gdb.openocd.enableSemihosting=true
+gdb.openocd.init.other=
+gdb.openocd.initialReset.type=init
+gdb.openocd.preRun.other=
+gdb.openocd.preRunReset.type=halt
+gdb.server.doStart=true
+gdb.server.executable=D\:\\openocd-0.10.0\\bin\\openocd.exe
+gdb.server.other=-f interface/stlink-v2.cfg -f target/stm32f3x.cfg

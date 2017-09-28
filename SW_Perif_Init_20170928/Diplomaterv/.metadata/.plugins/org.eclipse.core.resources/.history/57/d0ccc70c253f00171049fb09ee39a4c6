@@ -1,0 +1,299 @@
+#include "LCD.h"
+
+
+#define DB0 GPIO_PIN_1
+#define DB1 GPIO_PIN_2
+#define DB2 GPIO_PIN_3
+#define DB3 GPIO_PIN_3
+#define DB4 GPIO_PIN_4
+#define DB5 GPIO_PIN_5
+#define DB6 GPIO_PIN_6
+#define DB7 GPIO_PIN_7
+#define LCD_DI GPIO_PIN_8
+#define LCD_CS1 GPIO_PIN_10
+#define LCD_CS2 GPIO_PIN_11
+#define LCD_EN GPIO_PIN_12
+#define LCD_RST GPIO_PIN_13
+#define CS1 1
+#define CS2 2
+#define CS 0 //CS1 és CS2 is
+
+void LCD_Command(uint8_t cs, char command);
+void LCD_Data(uint8_t cs, char data);
+void LCD_On();
+void LCD_Line(char line);
+void LCD_Column(char cs, char column);
+void LCD_Page(char page);
+void LCD_Font(char page, char *column, int columndata);
+void LCD_Character(char character, char page, char *column);
+void LCD_String(char* string, char page, char column);
+
+
+char fonts[] = {
+                         0x00, 0x00, 0x00, 0x00, 0x00, // SPACE	0
+                         0x00, 0x00, 0x5F, 0x00, 0x00, // !		1
+                         0x00, 0x03, 0x00, 0x03, 0x00, // "		2
+                         0x14, 0x3E, 0x14, 0x3E, 0x14, // #		3
+                         0x24, 0x2A, 0x7F, 0x2A, 0x12, // $		4
+                         0x43, 0x33, 0x08, 0x66, 0x61, // %		5
+                         0x36, 0x49, 0x55, 0x22, 0x50, // &		6
+                         0x00, 0x05, 0x03, 0x00, 0x00, // '		7
+                         0x00, 0x1C, 0x22, 0x41, 0x00, // (		8
+                         0x00, 0x41, 0x22, 0x1C, 0x00, // )		9
+                         0x14, 0x08, 0x3E, 0x08, 0x14, // *		10
+                         0x08, 0x08, 0x3E, 0x08, 0x08, // +		11
+                         0x00, 0x50, 0x30, 0x00, 0x00, // ,		12
+                         0x08, 0x08, 0x08, 0x08, 0x08, // -		13
+                         0x00, 0x60, 0x60, 0x00, 0x00, // .		14
+                         0x20, 0x10, 0x08, 0x04, 0x02, // /		15
+                         0x3E, 0x51, 0x49, 0x45, 0x3E, // 0		16
+                         0x00, 0x04, 0x02, 0x7F, 0x00, // 1		17
+                         0x42, 0x61, 0x51, 0x49, 0x46, // 2		18
+                         0x22, 0x41, 0x49, 0x49, 0x36, // 3		19
+                         0x18, 0x14, 0x12, 0x7F, 0x10, // 4		20
+                         0x27, 0x45, 0x45, 0x45, 0x39, // 5		21
+                         0x3E, 0x49, 0x49, 0x49, 0x32, // 6		22
+                         0x01, 0x01, 0x71, 0x09, 0x07, // 7		23
+                         0x36, 0x49, 0x49, 0x49, 0x36, // 8		24
+                         0x26, 0x49, 0x49, 0x49, 0x3E, // 9		25
+                         0x00, 0x36, 0x36, 0x00, 0x00, // :		26
+                         0x00, 0x56, 0x36, 0x00, 0x00, // ;		27
+                         0x08, 0x14, 0x22, 0x41, 0x00, // <		28
+                         0x14, 0x14, 0x14, 0x14, 0x14, // =		29
+                         0x00, 0x41, 0x22, 0x14, 0x08, // >		30
+                         0x02, 0x01, 0x51, 0x09, 0x06, // ?		31
+                         0x3E, 0x41, 0x59, 0x55, 0x5E, // @		32
+                         0x7E, 0x09, 0x09, 0x09, 0x7E, // A		33
+                         0x7F, 0x49, 0x49, 0x49, 0x36, // B		34
+                         0x3E, 0x41, 0x41, 0x41, 0x22, // C		35
+                         0x7F, 0x41, 0x41, 0x41, 0x3E, // D		36
+                         0x7F, 0x49, 0x49, 0x49, 0x41, // E		37
+                         0x7F, 0x09, 0x09, 0x09, 0x01, // F		38
+                         0x3E, 0x41, 0x41, 0x49, 0x3A, // G		39
+                         0x7F, 0x08, 0x08, 0x08, 0x7F, // H		40
+                         0x00, 0x41, 0x7F, 0x41, 0x00, // I		41
+                         0x30, 0x40, 0x40, 0x40, 0x3F, // J		42
+                         0x7F, 0x08, 0x14, 0x22, 0x41, // K		43
+                         0x7F, 0x40, 0x40, 0x40, 0x40, // L		44
+                         0x7F, 0x02, 0x0C, 0x02, 0x7F, // M		45
+                         0x7F, 0x02, 0x04, 0x08, 0x7F, // N		46
+                         0x3E, 0x41, 0x41, 0x41, 0x3E, // O		47
+                         0x7F, 0x09, 0x09, 0x09, 0x06, // P		48
+                         0x1E, 0x21, 0x21, 0x21, 0x5E, // Q		49
+                         0x7F, 0x09, 0x09, 0x09, 0x76, // R		50
+                         0x26, 0x49, 0x49, 0x49, 0x32, // S		51
+                         0x01, 0x01, 0x7F, 0x01, 0x01, // T		52
+                         0x3F, 0x40, 0x40, 0x40, 0x3F, // U		53
+                         0x1F, 0x20, 0x40, 0x20, 0x1F, // V		54
+                         0x7F, 0x20, 0x10, 0x20, 0x7F, // W		55
+                         0x41, 0x22, 0x1C, 0x22, 0x41, // X		56
+                         0x07, 0x08, 0x70, 0x08, 0x07, // Y		57
+                         0x61, 0x51, 0x49, 0x45, 0x43, // Z		58
+                         0x00, 0x7F, 0x41, 0x00, 0x00, // [		59
+                         0x02, 0x04, 0x08, 0x10, 0x20, // slash 60
+                         0x00, 0x00, 0x41, 0x7F, 0x00, // ]		61
+                         0x04, 0x02, 0x01, 0x02, 0x04, // ^		62
+                         0x40, 0x40, 0x40, 0x40, 0x40, // _		63
+                         0x00, 0x01, 0x02, 0x04, 0x00, // `		64
+                         0x20, 0x54, 0x54, 0x54, 0x78, // a		65
+                         0x7F, 0x44, 0x44, 0x44, 0x38, // b		66
+                         0x38, 0x44, 0x44, 0x44, 0x44, // c		67
+                         0x38, 0x44, 0x44, 0x44, 0x7F, // d		68
+                         0x38, 0x54, 0x54, 0x54, 0x18, // e		69
+                         0x04, 0x04, 0x7E, 0x05, 0x05, // f		70
+                         0x08, 0x54, 0x54, 0x54, 0x3C, // g		71
+                         0x7F, 0x08, 0x04, 0x04, 0x78, // h		72
+                         0x00, 0x44, 0x7D, 0x40, 0x00, // i		73
+                         0x20, 0x40, 0x44, 0x3D, 0x00, // j		74
+                         0x7F, 0x10, 0x28, 0x44, 0x00, // k		75
+                         0x00, 0x41, 0x7F, 0x40, 0x00, // l		76
+                         0x7C, 0x04, 0x78, 0x04, 0x78, // m		77
+                         0x7C, 0x08, 0x04, 0x04, 0x78, // n		78
+                         0x38, 0x44, 0x44, 0x44, 0x38, // o		79
+                         0x7C, 0x14, 0x14, 0x14, 0x08, // p		80
+                         0x08, 0x14, 0x14, 0x14, 0x7C, // q		81
+                         0x00, 0x7C, 0x08, 0x04, 0x04, // r		82
+                         0x48, 0x54, 0x54, 0x54, 0x20, // s		83
+                         0x04, 0x04, 0x3F, 0x44, 0x44, // t		84
+                         0x3C, 0x40, 0x40, 0x20, 0x7C, // u		85
+                         0x1C, 0x20, 0x40, 0x20, 0x1C, // v		86
+                         0x3C, 0x40, 0x30, 0x40, 0x3C, // w		87
+                         0x44, 0x28, 0x10, 0x28, 0x44, // x		88
+                         0x0C, 0x50, 0x50, 0x50, 0x3C, // y		89
+                         0x44, 0x64, 0x54, 0x4C, 0x44, // z		90
+                         0x00, 0x08, 0x36, 0x41, 0x41, // {		91
+                         0x00, 0x00, 0x7F, 0x00, 0x00, // |		92
+                         0x41, 0x41, 0x36, 0x08, 0x00, // }		93
+                         0x02, 0x01, 0x02, 0x04, 0x02, // ~		94
+						 0x38, 0x54, 0x56, 0x55, 0x18, // é		95
+						 0x38, 0x44, 0x46, 0x45, 0x38, // ó		96
+						 0x38, 0x42, 0x41, 0x42, 0x39, // û		97
+
+						 };
+
+
+//LCD parancs küldése
+void LCD_Command(uint8_t cs, char command)
+	{
+	uint32_t temp;
+	if(cs==1) 	HAL_GPIO_WritePin(GPIOB, LCD_CS1, GPIO_PIN_SET);	// a cs paraméter alapján megfelelõ chipek engedélyezése
+	if(cs==2) 	HAL_GPIO_WritePin(GPIOB, LCD_CS2, GPIO_PIN_SET);
+	if(cs==0) HAL_GPIO_WritePin(GPIOB, LCD_CS1 | LCD_CS2, GPIO_PIN_SET); //mindkét chip engedélyezése
+	temp=GPIOB->ODR & 0xFFFFFF00;						//parancsbyte kerüljön a DB0..DB7-re
+	GPIOB->ODR=temp|(uint32_t)command;
+	HAL_GPIO_WritePin(GPIOB, LCD_DI, GPIO_PIN_RESET);		// parancs következik
+	HAL_GPIO_WritePin(GPIOB, LCD_EN, GPIO_PIN_SET);			//EN=1
+	//delay
+	HAL_GPIO_WritePin(GPIOB, LCD_EN, GPIO_PIN_RESET);		//EN=0
+	//delay
+	HAL_GPIO_WritePin(GPIOB, LCD_CS1 | LCD_CS2, GPIO_PIN_SET);			//chip engedélyezések visszavonása
+	}
+
+
+
+//LCD adat küldése
+void LCD_Data(uint8_t cs, char data)
+	{
+	uint32_t temp;
+	if(cs==1) 	HAL_GPIO_WritePin(GPIOB, LCD_CS1, GPIO_PIN_SET);	// a cs paraméter alapján megfelelõ chipek engedélyezése
+	if(cs==2) 	HAL_GPIO_WritePin(GPIOB, LCD_CS2, GPIO_PIN_SET);
+	if(cs==0) HAL_GPIO_WritePin(GPIOB, LCD_CS1 | LCD_CS2, GPIO_PIN_SET);
+
+	temp=GPIOB->ODR & 0xFFFFFF00;						//parancsbyte kerüljön a DB0..DB7-re
+	GPIOB->ODR=temp | (uint32_t) data;
+	HAL_GPIO_WritePin(GPIOB, LCD_DI, GPIO_PIN_SET);		// parancs következik
+	HAL_GPIO_WritePin(GPIOB, LCD_EN, GPIO_PIN_SET);			//EN=1
+	//delay
+	HAL_GPIO_WritePin(GPIOB, LCD_EN, GPIO_PIN_RESET);		//EN=0
+	//delay
+	HAL_GPIO_WritePin(GPIOB, LCD_CS1 | LCD_CS2, GPIO_PIN_RESET);			//chip engedélyezések visszavonása
+	}
+
+
+//LCD bekapcsolása
+void LCD_On()
+	{
+	LCD_Command(CS, 0x3F);
+	}
+
+//LCD kezdõ sorának kiválasztása
+void LCD_Line(char line)
+	{
+	LCD_Command(CS, 0x3F| line);
+	}
+
+//LCD oszlopának kiválasztása
+void LCD_Column(char cs, char column)
+	{
+	LCD_Command(cs, 0x40| column);
+	}
+
+//LCD oldal kiválasztása
+void LCD_Page(char page)
+	{
+	LCD_Command(CS, 0xB8| page);
+	}
+
+
+void LCD_Font(char page, char *column, int columndata)
+	{
+	LCD_Page(page);
+		for(int i=0; i<5; i++) 						//5 oszlopban iratok ki egy karaktert
+		{
+			if(*column<64)
+				{
+				LCD_Column(CS1, *column);//attól függõen melyik sorban járunk választjuk ki a chipet
+				LCD_Data(CS1, fonts[columndata+i]);
+				}
+
+			else
+			{
+				LCD_Column(CS2, (*column-63));
+				LCD_Data(CS2, fonts[columndata+i]);
+			}
+
+
+				(*column)++;
+		}
+	}
+
+
+void LCD_Character(char character, char page, char *column)		//egyes karakterekhez tartozó fonts kezdõ oszlop a képernyõn : *coulumn
+{
+	switch(character){
+	case 'a':LCD_Font(page,*column,65*5); break;
+	case 'b':LCD_Font(page,*column,66*5); break;
+	case 'c':LCD_Font(page,*column,67*5); break;
+	case 'd':LCD_Font(page,*column,68*5); break;
+	case 'e':LCD_Font(page,*column,69*5); break;
+	case 'f':LCD_Font(page,*column,70*5); break;
+	case 'g':LCD_Font(page,*column,71*5); break;
+	case 'h':LCD_Font(page,*column,72*5); break;
+	case 'i':LCD_Font(page,*column,73*5); break;
+	case 'j':LCD_Font(page,*column,74*5); break;
+	case 'k':LCD_Font(page,*column,75*5); break;
+	case 'l':LCD_Font(page,*column,76*5); break;
+	case 'm':LCD_Font(page,*column,77*5); break;
+	case 'n':LCD_Font(page,*column,78*5); break;
+	case 'o':LCD_Font(page,*column,79*5); break;
+	case 'p':LCD_Font(page,*column,80*5); break;
+	case 'q':LCD_Font(page,*column,81*5); break;
+	case 'r':LCD_Font(page,*column,82*5); break;
+	case 's':LCD_Font(page,*column,83*5); break;
+	case 't':LCD_Font(page,*column,84*5); break;
+	case 'u':LCD_Font(page,*column,85*5); break;
+	case 'v':LCD_Font(page,*column,86*5); break;
+	case 'w':LCD_Font(page,*column,87*5); break;
+	case 'x':LCD_Font(page,*column,88*5); break;
+	case 'y':LCD_Font(page,*column,89*5); break;
+	case 'z':LCD_Font(page,*column,90*5); break;
+	case ' ':LCD_Font(page,*column,0*5);  break;
+	case 'A':LCD_Font(page,*column,33*5); break;
+	case 'B':LCD_Font(page,*column,34*5); break;
+	case 'C':LCD_Font(page,*column,35*5); break;
+	case 'D':LCD_Font(page,*column,36*5); break;
+	case 'E':LCD_Font(page,*column,37*5); break;
+	case 'F':LCD_Font(page,*column,38*5); break;
+	case 'G':LCD_Font(page,*column,39*5); break;
+	case 'H':LCD_Font(page,*column,40*5); break;
+	case 'I':LCD_Font(page,*column,41*5); break;
+	case 'J':LCD_Font(page,*column,42*5); break;
+	case 'K':LCD_Font(page,*column,43*5); break;
+	case 'L':LCD_Font(page,*column,44*5); break;
+	case 'M':LCD_Font(page,*column,45*5); break;
+	case 'N':LCD_Font(page,*column,46*5); break;
+	case 'O':LCD_Font(page,*column,47*5); break;
+	case 'P':LCD_Font(page,*column,48*5); break;
+	case 'Q':LCD_Font(page,*column,49*5); break;
+	case 'R':LCD_Font(page,*column,50*5); break;
+	case 'S':LCD_Font(page,*column,51*5); break;
+	case 'T':LCD_Font(page,*column,52*5); break;
+	case 'U':LCD_Font(page,*column,53*5); break;
+	case 'V':LCD_Font(page,*column,54*5); break;
+	case 'W':LCD_Font(page,*column,55*5); break;
+	case 'X':LCD_Font(page,*column,56*5); break;
+	case 'Y':LCD_Font(page,*column,57*5); break;
+	case 'Z':LCD_Font(page,*column,58*5); break;
+
+	case '0': LCD_Font(page,*column,16*5);break;
+	case '1': LCD_Font(page,*column,17*5);break;
+	case '2': LCD_Font(page,*column,18*5);break;
+	case '3': LCD_Font(page,*column,19*5);break;
+	case '4': LCD_Font(page,*column,20*5);break;
+	case '5': LCD_Font(page,*column,21*5);break;
+	case '6': LCD_Font(page,*column,22*5);break;
+	case '7': LCD_Font(page,*column,23*5);break;
+	case '8': LCD_Font(page,*column,24*5);break;
+	case '9': LCD_Font(page,*column,25*5);break;
+		}
+}
+
+void LCD_String(char* string, char page, char column)
+{
+	char* column1= &column;
+	while(*string!='\0')
+	{
+	LCD_Character(*string, page, column1);
+	string++;				//memóriacím növelése, következõ karakter
+	}
+}
